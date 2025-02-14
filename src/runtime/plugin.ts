@@ -90,7 +90,7 @@ export const vGsapDirective = (
       if (binding.modifiers.add) {
         let order
           = getValueFromModifier(binding, 'order-')
-          || getValueFromModifier(binding, 'suggestedOrder-')
+            || getValueFromModifier(binding, 'suggestedOrder-')
         if (binding.modifiers.withPrevious) order = '<'
 
         if (!el.closest(`[data-gsap-timeline="true"]`)?.dataset?.gsapId) return
@@ -157,19 +157,19 @@ function prepareTimeline(el, binding, configOptions) {
   const once = binding.modifiers.call ?? binding.modifiers.once
   const scroller
     = configOptions?.scroller
-    || binding.value?.scroller
-    || binding.value?.[0]?.scroller
-    || binding.value?.[1]?.scroller
-    || undefined
+      || binding.value?.scroller
+      || binding.value?.[0]?.scroller
+      || binding.value?.[1]?.scroller
+      || undefined
   const scrub
     = binding.value?.scrub
-    ?? binding.value?.[1]?.scrub
-    ?? (once == true ? false : undefined)
-    ?? true
+      ?? binding.value?.[1]?.scrub
+      ?? (once == true ? false : undefined)
+      ?? true
   const markers = binding.modifiers.markers
   if (binding.modifiers.whenVisible) {
     timelineOptions.scrollTrigger = {
-      trigger: el,
+      trigger: binding.value?.trigger ?? el,
       start: binding.value?.start ?? 'top 90%',
       end: binding.value?.end ?? 'top 50%',
       scroller,
@@ -187,7 +187,7 @@ function prepareTimeline(el, binding, configOptions) {
   if (binding.modifiers.pinned) {
     const end = binding.value?.end ?? '+=1000px'
     timelineOptions.scrollTrigger = {
-      trigger: el,
+      trigger: binding.value?.trigger ?? el,
       start: binding.value?.start ?? 'center center',
       end,
       scroller,
@@ -201,7 +201,7 @@ function prepareTimeline(el, binding, configOptions) {
 
   if (binding.modifiers.parallax) {
     timelineOptions.scrollTrigger = {
-      trigger: el,
+      trigger: binding.value?.trigger ?? el,
       start: `top bottom`,
       end: `bottom top`,
       scroller,

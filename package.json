@@ -1,17 +1,17 @@
 {
-  "name": "v-gsap-nuxt",
-  "version": "1.3.6",
+  "name": "gsap-nuxt",
+  "version": "1.3.7",
   "description": "GSAP Directive for Nuxt 3",
   "repository": "holux-design/v-gsap-nuxt",
   "homepage": "https://v-gsap-nuxt.vercel.app",
   "contributors": [
     {
-      "name": "Lukas Hofstätter (Holux Design)"
+      "name": "a876691666"
     }
   ],
   "author": {
-    "name": "Lukas Hofstätter",
-    "email": "office@holux-design.at"
+    "name": "a876691666",
+    "email": "928200728@qq.com"
   },
   "keywords": [
     "v-gsap",
